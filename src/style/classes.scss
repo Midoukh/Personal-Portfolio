@@ -1,0 +1,41 @@
+//classes
+.welcome{
+    opacity: 1;
+    transform: translate(10%, 0%);
+}
+.hide-loader{
+    transform: translateY(120%);
+    opacity: 0;
+}
+.hide-social-card{
+    transform: translateX(140%);
+}
+.show-comps-anim{
+    opacity: .2;
+}
+.lighten-comps{
+    opacity: .9;
+}
+.slide-social-card{
+    transform: translateX(-40vw);
+        
+}
+
+.rotate-chev{
+    transform: rotateZ(360deg);
+}
+.switch-btn-direction{
+    order: 2;
+}
+.collapsed-burger-up{
+    transform: rotate(45deg);
+    top: 7px;
+}
+.collapsed-burger-middle{
+    display: none;
+}
+.collapsed-burger-down{
+    transform: rotate(-45deg);
+    bottom: 3px;
+    
+}

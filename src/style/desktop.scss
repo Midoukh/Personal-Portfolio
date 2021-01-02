@@ -1,0 +1,19 @@
+@media screen and (min-width: 700px){
+    .navbar{
+        display: flex;
+    }
+    .welcome-page{
+        & h1{
+            margin-left: 1em;
+            font-size: 5vw;
+
+        }
+    }
+    .header{
+        justify-content: center;
+        & nav{
+            display: none;
+        }
+    }
+   
+}

@@ -1,0 +1,87 @@
+@media screen and (max-width: 700px){
+    $dark-primary-color: #FBC02D;
+    $border-color: #fff9c40c;
+    $nav-col: #181717ef;
+
+
+    .navbar{
+       display: none;
+    }
+    .welcome-page{
+        & h1{
+            margin-left: 0em;
+            font-size: 3rem;
+
+        }
+    }
+    .header{
+        
+        & .phone-nv{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            min-height: 100vh;
+            min-width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            transition: all 1s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+            background-color: $nav-col;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            z-index: 99999;
+            margin: 0;
+            & > *{
+                animation: bouncing 2000ms linear both;
+                animation-iteration-count: 1;
+                font-size: 2rem;
+            }
+            & li{
+                list-style: none;   
+
+            }
+        }
+        .phone-nv #menu-icons{
+               color: $dark-primary-color;
+               transition: all .5s cubic-bezier(0.19, 1, 0.22, 1);
+           
+        }
+        .phone-nv #menu-icons:hover{
+               color: white;
+        }
+        
+        justify-content: space-around;
+    }
+  
+    .burger{
+        width: 8vw;
+        height: inherit;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 999999;
+        cursor: pointer;
+        & .line{
+            width: 2.5rem;
+            height: .5vh;
+            background-color: white;
+            transition: all 400ms cubic-bezier(1, 0, 0, 1);
+        }
+       
+        & > * + *{
+            margin-top: .5rem;
+        } 
+        & > *{
+            position: relative;
+        }
+      
+    }
+    .burger:hover{
+        & > *{
+            background-color: $dark-primary-color;
+        }
+    }
+ 
+    
+}
