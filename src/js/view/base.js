@@ -10,6 +10,7 @@ export const elements = {
     infosContainer: document.querySelector('.infos'),
     contactButton: document.querySelector('.contact__button'),
     header: document.querySelector('.header'),
+    menuIcons: document.querySelectorAll('.infos > nav > li'),
     exit: false,
     mouse: {
         isClicked: false,

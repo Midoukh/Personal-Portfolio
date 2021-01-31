@@ -1,15 +1,14 @@
 import '../style/main.scss'
 import { elements } from './view/base'
-// import { movePlanet, showContent, slideSocialMedia, backgroundDuplicateCompns, randomPosition, moveComponants, grabComponants, dragComponants, slideBack, burgerMenu, addTitleToMenuOnHover } from './view/animation'
+import Swup from 'swup';
 import * as animation from './view/animation'
+import * as effects from './view/effects'
 
-
-
+const swup = new Swup()
 
 
 //events
 window.addEventListener('load', () => {
-    // placePanet()
     setTimeout(() => {
         animation.backgroundDuplicateCompns()
         animation.showContent()
@@ -57,3 +56,5 @@ elements.infosContainer.addEventListener('mousemove', (e) => {
 
 //burger menu
 elements.header.addEventListener('click', animation.burgerMenu)
+
+//icons on click

@@ -1,0 +1,117 @@
+@import 'variables';
+.contact-bg{
+    background-color: $accent-color;
+    font-family: $Montserrat;
+}
+.contact-via-email{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+   
+}
+
+.my-name, .my-name-logo{
+    display: flex;
+    align-items: center;
+}
+.my-name{
+    justify-content: space-between;
+}
+.back-home{
+    font-size: 3em;
+    color: $dark-primary-color;
+    animation-name: move-home;
+    animation-delay: 90s;
+    animation-duration: .3s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-iteration-count: infinite;
+    transition: .4s all cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.back-home:hover{
+    transform: rotate(360deg);
+    color: white;
+}
+@keyframes move-home{
+    0%{transform: translateX(-5px);}
+    100%{transform: translateX(5px);}
+}
+.my-name h1{
+    font-weight: 700;
+    opacity: .7;
+    font-family: $Sacramento;
+    font-size: 2em;
+}
+.my-name img{
+    max-height: 30%;
+    max-width: 30%;
+    margin-right: .5em;
+}
+.contact-illustration{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.contact-illustration img{
+    min-height: 50vh;
+    max-height: 50vh;
+
+}
+.contact-form{
+    min-height: 100vh;
+    padding-top: 1rem;
+    display: grid;
+    grid-template-rows: 25% 50% 25%;
+}
+.contact-infos{
+    display: grid;
+    grid-template-rows: 30% 10% 35% 25%;
+    padding-block: 2rem;
+    grid-row-gap: 2rem;
+}
+.contact-infos h1{
+    font-size: 2.5em;
+    font-weight: 700;
+}
+#message, #email{
+    max-width: 60%;
+    border: none;
+    border-radius: 10px;
+    padding-left: 1rem;
+    outline: none;
+    transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+#email{
+    min-height: 2.5rem;
+    // padding-left: 1rem;
+}
+#message{
+    background-color: white;
+    padding-top: 1rem;
+    resize: none;
+    font-size: 1.5em;
+}
+#message::placeholder{
+    opacity: 0.5;
+}
+#message:focus, #email:focus{
+    background-color: #00bbd438;
+}
+#send{
+    max-width: 25%;
+    border: none;
+    border-radius: 10px;
+    max-height: 3rem;
+    color: $light-primary-color;
+    background-color: $dark-primary-color;
+    font-weight: 700;
+    box-shadow: 1px 1px 30px $accent-color-fullOpacity;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+#send:hover{
+    background-color: $accent-color;
+    color: $dark-primary-color;
+}

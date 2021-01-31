@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,27 +5,29 @@
     <meta name="keywords"
         content="javascript, web develoment, css, html, work, react, coding, programming, portfolio" />
     <meta name="author" content="Ahmed Khelili, ahmedkhelili132@gmail.com">
-    <link rel="icon" type="image/png" href="./imgs/code-outline.svg">
+    <link rel="icon" type="image/png" href="../imgs/code-outline.svg">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/8869148d37.js" crossorigin="anonymous"></script>
-    <script defer src="node_modules/swup/dist/swup.min.js"></script>
-    <link rel="stylesheet" href="./bundle.css" type="text/html">
+
+    <link rel="stylesheet" href="../bundle.css">
     <title>Ahmed Khelili Portfolio</title>
 </head>
 
-<body class="home-bg">
-    <main class="main transition-fade" id="swup">
+<body class="bio-bg">
+
+    <main class="main-bio">
+
         <header class="header bg-dark">
-            <img src="./imgs/LOGO.png" alt="my logo">
+            <img src="../imgs/LOGO.png" alt="my logo">
             <div class="burger">
                 <div class="line up"></div>
                 <div class="line middle"></div>
                 <div class="line down"></div>
             </div>
             <nav class="phone-nv" id="phone-nv">
-                <li class="phone-nv__home"><a href="">
+                <li class="phone-nv__home"><a href="../index.html">
                         <ion-icon name="home-outline" id="menu-icons"></ion-icon>
                     </a></li>
                 <li class="phone-nv__bio"><a href="">
@@ -45,13 +44,16 @@
                     </a></li>
             </nav>
         </header>
+        <section class="infos-bio">
 
-        <section class="infos">
-            <nav class="navbar">
-                <li class="navbar__home"><a href="">
+            <canvas id="canvas">
+
+            </canvas>
+            <nav class="navbar-bio">
+                <li class="navbar__home"><a href="../index.html">
                         <ion-icon name="home-outline" id="menu-icons"></ion-icon>
                     </a></li>
-                <li class="navbar__bio"><a href="./pages/bio.html">
+                <li class="navbar__bio"><a href="">
                         <ion-icon name="person-outline" id="menu-icons"></ion-icon>
                     </a></li>
                 <li class="navbar__skills"><a href="">
@@ -60,16 +62,46 @@
                 <li class="navbar__work"><a href="">
                         <ion-icon name="eye" id="menu-icons"></ion-icon>
                     </a></li>
-                <li class="navbar__contact"><a href="./pages/contact.html">
+                <li class="navbar__contact"><a href="">
                         <ion-icon name="mail-outline" id="menu-icons"></ion-icon>
                     </a></li>
             </nav>
-            <section class="welcome-page">
-                <h1>My Name is Ahmed and I'm a <span data-name="front">Front</span> End <span
-                        data-name="dev">Developper</span>.</h1>
+            <div class="bio">
 
-            </section>
+                <div class="aboutme">
+                    <h1>Ahmed Khelili</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione quisquam ducimus odio est
+                        nostrum reiciendis atque. Magnam dolore laboriosam quae consequatur, facilis quibusdam natus.
+                        Vel magni voluptas ratione corporis est!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias fugiat recusandae dignissimos,
+                        nulla consequuntur quis, accusantium doloribus sit iste repellendus itaque voluptate veniam
+                        quaerat enim suscipit ratione dicta reiciendis reprehenderit.</p>
 
+                </div>
+                <div class="avatar">
+                    <div class="wrapper" data-anim="base wrapper">
+                        <div class="circle" data-anim="base left"></div>
+                        <div class="circle" data-anim="base right"></div>
+                        <img src="https://media.almabaseapp.com/1/profile_pictures/raghavender-mittapalli/raghavender-mittapalli-present.png"
+                            alt="me">
+                    </div>
+                </div>
+
+                <div class="bio-social-media">
+                    <a href="https://www.facebook.com/profile.php?id=100024228679476">
+                        <ion-icon name="logo-facebook" id="social-icons"></ion-icon>
+                    </a>
+                    <div class="social-lines"></div>
+                    <a href="https://github.com/Midoukh">
+                        <ion-icon name="logo-github" id="social-icons"></ion-icon>
+                    </a>
+                    <div class="social-lines"></div>
+                    <a href="">
+                        <ion-icon name="logo-linkedin" id="social-icons"></ion-icon>
+                    </a>
+                </div>
+
+            </div>
             <section class="animated-bg">
                 <i class="fab fa-html5"></i>
                 <i class="fab fa-css3-alt"></i>
@@ -80,47 +112,13 @@
 
             </section>
 
-            <aside class="contact">
-                <button class="contact__button"><i class="fas fa-chevron-circle-left"></i></button>
-                <section class="contact__social">
-                    <div class="contact__social__acounts">
-                        <li id="facebook"><a href="https://www.facebook.com/profile.php?id=100024228679476"
-                                target="_blank">
-                                <ion-icon name="logo-facebook" id="social-icons"></ion-icon>
-                            </a></li>
-                        <li id="github"><a href="https://github.com/Midoukh" target="_blank">
-                                <ion-icon name="logo-github" id="social-icons"></ion-icon>
-                            </a></li>
-                        <li id="linkedin"><a href="" target="_blank">
-                                <ion-icon name="logo-linkedin" id="social-icons"></ion-icon>
-                            </a></li>
-                    </div>
-                    <div class="contact__social__resume">
-                        <h3>Resumé</h3>
-                        <button><i class="fas fa-cloud-download-alt"></i></button>
-                    </div>
-                </section>
-            </aside>
+
         </section>
-        <div class="loader">
-            <div class="outer-atom">
-                <div data-name="inner-atom one"></div>
-                <div data-name="inner-atom two"></div>
-                <div data-name="inner-atom three"></div>
-                <div data-name="planet"></div>
-            </div>
-            <h3 class="loader__msg">Loading</h3>
-        </div>
+        <script>
 
-    </main>
+        </script>
+        <script src="../../dist/bundle.js"></script>
+        <script src="../bundle.js"></script>
+        <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
-
-
-
-
-
-    <script src="dist/bundle.js"></script>
-    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 </body>
-
-</html>

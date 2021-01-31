@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const ASSET_PATH = process.env.ASSET_PATH || '/';
 
 
 
@@ -19,6 +20,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
+
   },
   devServer: {
     contentBase: 'public'
@@ -61,12 +63,24 @@ module.exports = {
       filename: 'index.html',
       template: './index.html'
     }),
+    new HtmlWebpackPlugin({
+      filename: './pages/bio.html',
+      template: './src/html/bio.html',
+      chunks: []
+    }),
+    new HtmlWebpackPlugin({
+      filename: './pages/contact.html',
+      template: './src/html/contact.html'
+    }),
     new MiniCssExtractPlugin({
       filename: "bundle.css"
+
     }),
     new CopyPlugin({
       patterns: [
-        { from: path.resolve(__dirname, 'dist') }
+        // { from: path.resolve(__dirname, 'imgs') }
+        { from: './src/assets/img', to: 'imgs' }
+
       ],
     }),
   ],
@@ -88,7 +102,13 @@ module.exports = {
             // After all CSS loaders we use plugin to do his work.
             // It gets all transformed CSS and extracts it into separate
             // single bundled file
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: (resourcePath, context) => {
+                return path.relative(path.dirname(resourcePath), context) + '/';
+              },
+            }
+
           },
           {
             // This loader resolves url() and @imports inside CSS
@@ -118,7 +138,7 @@ module.exports = {
             // In options we can set different things like format
             // and directory to save
             options: {
-              outputPath: 'images'
+              outputPath: './images'
             }
           }
         ]

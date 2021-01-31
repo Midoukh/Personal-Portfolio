@@ -82,6 +82,56 @@
             background-color: $dark-primary-color;
         }
     }
- 
-    
+    .bio{
+        display: grid;
+        grid-template-rows: 35% 45% 20%;
+        justify-content: center;
+        padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+        grid-gap: 2rem;
+        min-height: 100vh;
+        background-size: cover;
+        background-attachment: scroll;
+        place-items: center;
+    }
+    .bio-bg{
+        max-height: auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .navbar-bio{
+        display: none;
+    }
+    .bio-social-media{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        & .social-lines{
+        width: 5vh;
+        height:1vh;
+        background-color: white;
+        }
+        & #social-icons{
+            font-size: 1.7em;
+        }
+    }
+    .avatar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .contact-via-email{
+        grid-template-rows: 60% 40%;
+    }
+}
+@media screen and (max-width: 700px){
+
+    .bio{
+        padding: none;
+        padding-top: 6rem;
+        padding-inline: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }

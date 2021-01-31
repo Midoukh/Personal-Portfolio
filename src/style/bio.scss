@@ -1,0 +1,150 @@
+//colors
+$dark-primary-color: #FBC02D;
+$light-primary-color: #FFF9C4;
+$border-color: #fff9c40c;
+
+$primary-color: #FFEB3B;
+$social-media-icons: #ffeb3b94;
+
+$text-icons: #212121;
+$bg-color: #2a2a2a;
+$nav-col: #181717;
+
+$accent-color: #00bbd471;
+$accent-color-fullOpacity: #00bbd4;
+
+
+//fonts
+$Montserrat: 'Montserrat', sans-serif;
+$Merriweather: 'Merriweather', serif;
+.bio-bg{
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 100vw;
+    font-family: $Merriweather;
+    transition: all 1s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+#canvas{
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+    background-color: red;
+}
+// .main-bio{
+//     max-width: 100%;
+//     min-height: 100vh;
+// }
+.infos-bio{
+    max-width: 100%;
+    display: flex;
+    // flex-direction: row;
+    // justify-content: space-between;
+    // grid-template-columns: 8% 92%;
+}
+.navbar-bio{
+    background-color: $nav-col;
+    width: min(8%);
+    border-right: .3px solid $border-color;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    & > *{
+        list-style: none;
+        font-size: 2rem;
+        text-shadow: 0 20px 50px $primary-color;
+        cursor: pointer;
+    }
+    & > li > a > *{
+        color: $dark-primary-color;
+        
+    }
+    min-height: 86vh;
+
+}
+.bio{
+    background-color: hsla(0, 0%, 0%, 0.8);
+    // min-height: 100vh;
+    width: min(92%);
+    // padding-top: 6rem;
+ 
+}
+.aboutme{
+    color: white;
+    & h1{
+        font-size: 2.5em;
+        margin-bottom: 1.5em;
+        text-transform: uppercase;
+        color: $dark-primary-color;
+        text-shadow: 6px 6px 0px $accent-color;
+        user-select: none;
+    }
+    & p{
+        line-height: 1.7em;
+    }
+}
+.avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.avatar img{
+    border-radius: 50%;
+    z-index: 50;
+    height: 100%;
+    width: 100%;
+
+    // object-fit: contain;
+   
+
+}
+.bio-social-media{
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    & [name="logo-facebook"]{
+        color: $accent-color-fullOpacity;
+    }
+     & [name="logo-github"]{
+        color: $dark-primary-color;
+    }
+     & [name="logo-linkedin"]{
+        color: rgb(172, 16, 81);
+    }
+    
+    & > *{
+        cursor: pointer;
+    }
+    & #social-icons:hover{
+        color: white;
+    }
+}
+
+/*
+the circular progress bar
+*/
+#svg_circle_loader {
+  background: none;
+  border: none;
+  margin: none;
+  padding: none;
+}
+#circle_loader {
+  width: inherit;
+  height: inherit;
+  fill: yellow;
+  stroke: #F00;
+  stroke-width: 5px;
+  /* rotates the circle's stroke so that the start is at the top */
+  stroke-dashoffset: 78.5;
+  /* the 0 is the length of the arc filled by the stroke, and the 314 is the diameter (2 times the circle radius) times pi (3.14...) which is the "gap" between the coloured stroke arcs */
+  stroke-dasharray: 0, 314;
+  /* not necessary, but makes it look smoother */
+  transition: all 0.2s linear;
+}

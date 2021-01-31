@@ -15,5 +15,32 @@
             display: none;
         }
     }
-   
+   .bio{
+        padding: 4rem 4rem 0rem 4rem;
+        display: grid;
+        grid-template-columns: 50% 35% 15%;
+        grid-gap: 2rem;
+   }
+   .bio-bg{
+       overflow: hidden;
+   }
+   .navbar-bio{
+       display: flex;
+   }
+   .bio-social-media{
+       flex-direction: column;
+       margin-top: 9rem; 
+       & .social-lines{
+        width: .3rem;
+        height: 2.5rem;
+        background-color: white;
+    }
+   }
+   .contact-bg{
+       overflow: hidden;
+   }
+   .contact-via-email{
+    grid-template-columns: 60% 40%;
+   }
 }
+
