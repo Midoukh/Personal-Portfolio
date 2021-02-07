@@ -119,9 +119,7 @@
         justify-content: center;
         align-items: center;
     }
-    .contact-via-email{
-        grid-template-rows: 60% 40%;
-    }
+    
 }
 @media screen and (max-width: 700px){
 
@@ -134,4 +132,23 @@
         justify-content: center;
         align-items: center;
     }
+    #canvas{
+        min-height: 130vh;
+    }
+   
+    #message, #email, #send{
+       max-width: 100%;
+   }
+   .contact-via-email{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+   }
+   .dialogue{
+     width: 40%;
+     height: 3%;
+     left: 20%;
+
+   }
 }

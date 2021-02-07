@@ -40,7 +40,21 @@
        overflow: hidden;
    }
    .contact-via-email{
-    grid-template-columns: 60% 40%;
+        display: grid;
+        grid-template-columns: 60% 40%;
+   }
+   #canvas{
+
+       height: 100%;
+   }
+   #message, #email, #send{
+      max-width: 60%;
+   }
+  .dialogue{
+     width: 20%;
+     height: 3%;
+    left: 40%;
+
    }
 }
 

@@ -20,6 +20,10 @@
 <body class="contact-bg">
     <main class="contact-via-email">
         <section class="contact-form">
+            <div class="dialogue">
+                <h3>Please verify your Email</h3>
+                <span><i>X</i></span>
+            </div>
             <div class="my-name">
                 <div class="my-name-logo">
                     <img src="../imgs/code-outline copy.svg" alt="">
@@ -30,11 +34,11 @@
                 </a>
             </div>
 
-            <form class="contact-infos">
+            <form class="contact-infos" method="POST" action="http://postmail.invotes.com/send">
                 <h1>I'd love to hear from you.</h1>
-                <input type="text" name="email" id="email" placeholder="Email">
-                <textarea id="message" placeholder="Your message"></textarea>
-                <button id="send">Send</button>
+                <input type="text" name="email" id="email" placeholder="Email" required>
+                <textarea name="text" id="message" placeholder="Your message" required="true"></textarea>
+                <button id="send"><i class="fas fa-paper-plane"></i></button>
             </form>
 
         </section>
@@ -43,4 +47,123 @@
         </section>
 
     </main>
+    <script>
+        //collect form infos
+        const email = document.getElementById('email')
+        const message = document.getElementById('message')
+        const form = document.querySelector('.contact-infos')
+        const sentButton = document.getElementById('send')
+        const dialogue = document.querySelector('.dialogue')
+        const closeDialogue = dialogue.querySelector('span')
+        const myEmail = 'ahmedkhelili132@gmail.com'
+        const accessToken = {
+            'access_token': 'afuag4cyr276fi6uu9mw9m2b'
+        }
+
+        //validating inputs
+        const validateEmail = (email) => {
+            const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+            const validEmail = regex.test(email)
+            if (validEmail) {
+                console.log('valid email')
+            }
+            else {
+                dialogue.classList.add('showWarning')
+                console.log('invalid email')
+            }
+            return validEmail
+        }
+        const closeDgue = () => {
+            dialogue.classList.remove('showWarning')
+
+        }
+
+        const collectAndSend = async (e) => {
+            e.preventDefault()
+            const contactInfos = {
+                email: email.value,
+                message: email.value + '\n' + message.value
+            }
+            const validEmail = validateEmail(contactInfos.email)
+
+            sentButton.innerHTML = '<i class="fas fa-atom spinner"></i>'
+            sentButton.setAttribute('disabled', true)
+
+            //perform a POST request
+            const endpoint = 'https://postmail.invotes.com/send'
+            // const settings = {
+            //     method: 'POST',
+            //     headers: {
+            //         Accept: 'application/json',
+            //         'Content-Type': 'application/json',
+            //     }
+            // };
+            const request = new XMLHttpRequest();
+            request.onreadystatechange = function () {
+                //in case of a successful request
+                if (request.readyState == 4 && request.status == 200) {
+                    success();
+                    validEmail ? sentButton.innerHTML = 'Your message was sent successfully!' : null
+                } else
+                    if (request.readyState == 4) {
+                        error(request.response);
+                        sentButton.innerHTML = 'Something went wrong please try again'
+
+                    }
+            };
+
+
+
+
+            // try {
+            //     const fetchResponse = await fetch(endpoint, settings);
+            //     const data = await fetchResponse.json();
+            //     console.log(data)
+            //     success()
+            //     // return data;
+            // } catch (e) {
+            //     error(e)
+            // }
+
+
+            accessToken['text'] = contactInfos.message
+            accessToken['subject'] = 'Job offers'
+
+            const parms = toParams(accessToken)
+
+
+            request.open("POST", endpoint, true);
+            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            request.send(parms);
+
+            console.log('performed succesfully')
+
+            form.reset()
+
+            return false
+        }
+        const success = () => {
+            // window.location = window.location.pathname + "?message=Email+Successfully+Sent%21&isError=0";
+
+        }
+        const error = (err) => {
+            // window.location = window.location.pathname + "?message=Email+could+not+be+sent.&isError=1";
+        }
+        const toParams = (token) => {
+            let form_data = [];
+            for (let key in token) {
+                form_data.push(encodeURIComponent(key) + "=" + encodeURIComponent(token[key]));
+            }
+
+            return form_data.join("&");
+        }
+
+
+
+        form.addEventListener('submit', collectAndSend)
+        closeDialogue.addEventListener('click', closeDgue)
+
+
+    </script>
 </body>

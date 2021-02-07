@@ -2,13 +2,16 @@
 .contact-bg{
     background-color: $accent-color;
     font-family: $Montserrat;
+    min-height: 100vh;
+    max-width: 100vw;
 }
 .contact-via-email{
-    display: grid;
-    align-items: center;
-    justify-content: center;
+    // align-items: center;
+    // justify-content: center;
     padding: 2rem;
-   
+    box-sizing: border-box;
+    width: 100%;
+    place-items: center;
 }
 
 .my-name, .my-name-logo{
@@ -69,13 +72,14 @@
     grid-template-rows: 30% 10% 35% 25%;
     padding-block: 2rem;
     grid-row-gap: 2rem;
+    justify-content: center;
+    place-content: center;
 }
 .contact-infos h1{
     font-size: 2.5em;
     font-weight: 700;
 }
 #message, #email{
-    max-width: 60%;
     border: none;
     border-radius: 10px;
     padding-left: 1rem;
@@ -99,7 +103,6 @@
     background-color: #00bbd438;
 }
 #send{
-    max-width: 25%;
     border: none;
     border-radius: 10px;
     max-height: 3rem;
@@ -110,8 +113,63 @@
     font-size: 1.1em;
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    outline: none;
+}
+#send > *{
+    font-size: 1.5em;
 }
 #send:hover{
     background-color: $accent-color;
     color: $dark-primary-color;
+}
+.spinner{
+    color: $accent-color-fullOpacity;
+    animation-name: senting;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+
+}
+@keyframes senting{
+    0%{transform: rotate(0); font-size: 2em; opacity: 0;};
+    100%{transform: rotate(360deg);font-size: 2.4em; opacity: 1;};
+
+}
+.dialogue{
+  
+    background-color: rgba(170, 12, 104, 0.794);
+    position: absolute;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    // box-sizing: border-box;
+    font-weight: 700;
+    border-radius: 12px;
+    font-size: 1.3em;
+    border: .5px solid #fbc12d78;
+    box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.352);
+    transform: translateY(-300%);
+    opacity: 0;
+    transition: all .4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.showWarning{
+    transform: translateY(-50%);
+    opacity: 1;
+}
+.dialogue h3{
+    font-size: 52%;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.382);
+    width: 100%;
+}
+.dialogue span{
+    font-weight: 400;
+    background-color: rgba(0, 0, 0, 0.308);
+    border-radius: 50%;
+    padding: .3rem;
+    font-size: 65%;
+    width: .6rem;
+    height:.6rem;
+    cursor: pointer;
+
 }

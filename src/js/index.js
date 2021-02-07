@@ -3,8 +3,10 @@ import { elements } from './view/base'
 import Swup from 'swup';
 import * as animation from './view/animation'
 import * as effects from './view/effects'
+import * as customCursor from './view/customCursor'
 
 const swup = new Swup()
+
 
 
 //events
@@ -57,4 +59,4 @@ elements.infosContainer.addEventListener('mousemove', (e) => {
 //burger menu
 elements.header.addEventListener('click', animation.burgerMenu)
 
-//icons on click
+
